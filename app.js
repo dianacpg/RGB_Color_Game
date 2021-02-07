@@ -66,7 +66,7 @@ easyButton.addEventListener("click", function () {
   easyButton.classList.add("active");
   hardButton.classList.remove("active");
   colors = randomColors(3);
-  colorPicked = pickColour();
+  colorPicked = pickColor();
   winningColor.textContent = colorPicked;
   for (var i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = colors[i];
