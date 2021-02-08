@@ -1,3 +1,4 @@
+var numberSquares = 6;
 var colors = randomColors(6);
 var h1 = document.querySelector("h1");
 var squares = document.querySelectorAll(".square");
@@ -17,15 +18,9 @@ for (var i = 0; i < squares.length; i++) {
     if (clickedColor === colorPicked) {
       message.textContent = "Correct!";
       h1.style.backgroundColor = clickedColor;
-<<<<<<< HEAD
       squares.forEach(function (square) {
         square.style.backgroundColor = clickedColor;
       });
-=======
-      squares.forEach(function(square) {
-square.style.backgroundColor = clickedColor;
-});
->>>>>>> e8e3b18b569a8e9219281f459c6ca84b2fb923b5
       reset.textContent = "Play Again?";
     } else {
       this.style.backgroundColor = "#232323";
@@ -34,10 +29,11 @@ square.style.backgroundColor = clickedColor;
   });
 }
 
-function changeColours(colour) {
-  h1.style.backgroundColor = colour;
+// loop colors
+function changeColors(color) {
+  h1.style.backgroundColor = color;
   for (var i = 0; i < squares.length; i++) {
-    squares[i].style.backgroundColor = colour;
+    squares[i].style.backgroundColor = color;
   }
 }
 
@@ -65,22 +61,12 @@ function randomColor() {
   return color;
 }
 
-// Reset game button
-reset.addEventListener("click", function () {
-  colorPicked = pickColor();
-  winningColor.textContent = colorPicked;
-  for (var i = 0; i < colors.length; i++) {
-    squares[i].style.backgroundColor = colors[i];
-  }
-  h1.style.backgroundColor = "#232323";
-  reset.textContent = "Reset Colors";
-});
-
 // Easy mode game
 easyButton.addEventListener("click", function () {
   easyButton.classList.add("active");
   hardButton.classList.remove("active");
-  colors = randomColors(3);
+  numberSquares = 3;
+  colors = randomColors(numberSquares);
   colorPicked = pickColor();
   winningColor.textContent = colorPicked;
   for (var i = 0; i < squares.length; i++) {
@@ -95,7 +81,8 @@ easyButton.addEventListener("click", function () {
 hardButton.addEventListener("click", function () {
   hardButton.classList.add("active");
   easyButton.classList.remove("active");
-  colors = randomColors(6);
+  numberSquares = 6;
+  colors = randomColors(numberSquares);
   colorPicked = pickColor();
   winningColor.textContent = colorPicked;
   for (var i = 0; i < squares.length; i++) {
@@ -105,4 +92,16 @@ hardButton.addEventListener("click", function () {
     }
     squares[i].style.backgroundColor = colors[i];
   }
+});
+
+// Reset game button
+reset.addEventListener("click", function () {
+  colors = randomColors(numberSquares);
+  colorPicked = pickColor();
+  winningColor.textContent = colorPicked;
+  for (var i = 0; i < colors.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+  }
+  h1.style.backgroundColor = "#232323";
+  reset.textContent = "Reset Colors";
 });
