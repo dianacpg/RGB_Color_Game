@@ -17,9 +17,15 @@ for (var i = 0; i < squares.length; i++) {
     if (clickedColor === colorPicked) {
       message.textContent = "Correct!";
       h1.style.backgroundColor = clickedColor;
+<<<<<<< HEAD
       squares.forEach(function (square) {
         square.style.backgroundColor = clickedColor;
       });
+=======
+      squares.forEach(function(square) {
+square.style.backgroundColor = clickedColor;
+});
+>>>>>>> e8e3b18b569a8e9219281f459c6ca84b2fb923b5
       reset.textContent = "Play Again?";
     } else {
       this.style.backgroundColor = "#232323";
