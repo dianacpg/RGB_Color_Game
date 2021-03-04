@@ -9,16 +9,18 @@ h1 {
   line-height: 1.1;
   font-weight: normal;
   color: white;
-  background: steelblue;
+  font-family: "Anonymous Pro", monospace;
+  background: black;
   margin: 0;
   text-transform: uppercase;
   padding: 20px 0;
 }
 #menu {
-  height: 30px;
+  height: 31px;
   text-align: center;
   background-color: white;
   color: black;
+  font-family: "Anonymous Pro", monospace;
 }
 
 #container {
@@ -39,9 +41,22 @@ h1 {
 }
 
 .active {
-  background: rgba(255, 255, 255, 0.603);
+  background: #444444;
+  color: white;
 }
 
 #message {
   color: black;
+  letter-spacing: 1px;
+  font-family: "Anonymous Pro", monospace;
+}
+
+button {
+  background-color: white;
+  color: #232323;
+  border: 2px solid #555555;
+  height: 100%;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  font-family: "Anonymous Pro", monospace;
 }
