@@ -28,7 +28,7 @@ for (let i = 0; i < squares.length; i++) {
   });
 }
 
-// loop colors
+// loop colors to not repeat
 function changeColors(color) {
   h1.style.backgroundColor = color;
   for (let i = 0; i < squares.length; i++) {
